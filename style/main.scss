@@ -1,12 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@300;400&display=swap');
 
-$bg-col: #fff1e8;
-$main-col: #ff004d;
-$sub-col: #c2c3c7;
+$bg-col: #f7f1e8;
+$accent-col: #ff004d;
+$sub-col: #333333;
+$text-col: #05010c;
 
-$heading-font: 'Merriweather', serif;
-$list-font: 'Fira Code', monospace;
+$heading-font: "Lato", sans-serif;
+$text-font: "Karla", sans-serif;
+$list-font: "Montserrat Alternates", sans-serif;
 
 @mixin doFlex($direction, $align, $justify) {
     display: flex;
@@ -22,6 +25,12 @@ $list-font: 'Fira Code', monospace;
     text-decoration: none;
 }
 
+html,
+body {
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
 html {
     background-color: $bg-col;
 }
@@ -31,7 +40,7 @@ a>span:hover {
 }
 
 span {
-    color: $main-col;
+    color: $accent-col;
     font-weight: 400;
 }
 
@@ -40,35 +49,47 @@ main {
     height: 100%;
 
     padding: 1rem;
-
-    @include doFlex(row, center, center);
 }
 
-.personal-section {
-    min-width: 450px;
+section {
+    width: 100vw;
+    height: 100vh;
+
+    @include doFlex(column, center, center);
 }
 
-.skill-section {
-    padding-top: 1rem;
+.section-align {
+    @include doFlex(column, flex-start, left);
+}
 
-    @include doFlex(row, flex-start, center);
-    gap: 2rem;
+.expand {
+    margin-top: 1.25em;
+}
+
+.expand:hover {
+    transition: all;
+    transition-duration: 150ms;
+    transform: scale(1.1, 1.1);
 }
 
 h1 {
-    margin-bottom: 1.25rem;
+    margin-bottom: 0.25em;
 
     font-family: $heading-font;
-    font-size: 2rem;
+    font-size: 2.5em;
     font-weight: 700;
+
+    color: $accent-col;
 }
 
 h2 {
-    margin-bottom: 1rem;
+    margin-bottom: 0.5em;
 
-    font-family: $heading-font;
-    font-size: 1rem;
-    font-weight: 300;
+    font-family: $text-font;
+    font-size: 1.25em;
+    font-weight: 400;
+
+    color: $text-col;
 }
 
 ul {
@@ -92,7 +113,7 @@ li {
     }
 
     p:hover {
-        color: $main-col;
+        color: $accent-col;
     }
 }
 
@@ -112,10 +133,10 @@ button {
     font-weight: 400;
 
     color: $bg-col;
-    background-color: $main-col;
+    background-color: $accent-col;
 
     border-style: solid;
-    border-color: $main-col;
+    border-color: $accent-col;
     border-width: 2px;
 
     transition: all;
@@ -129,51 +150,40 @@ button:hover {
     transform: scale(1.1, 1.1);
 }
 
+.button-container {
+    width: 100%;
+    @include doFlex(row, center, center);
+}
+
 .inverse-button {
-    color: $main-col;
+    color: $accent-col;
     background-color: transparent;
 }
 
-footer {
-    width: 100%;
-    position: fixed;
-    bottom: 0px;
-    padding: 1rem;
+// @media (max-width: 80rem) {
+//     main {
+//         flex-direction: column;
+//         gap: 2rem;
+//     }
 
-    @include doFlex(row, center, center);
+//     .personal-section {
+//         min-width: auto;
+//     }
 
-    p {
-        font-family: $heading-font;
-        font-size: 0.875rem;
-        font-weight: 400;
-        line-height: 1.25rem;
-    }
-}
+//     .button-container {
+//         margin-top: 1.25rem;
 
-@media (max-width: 80rem) {
-    main {
-        flex-direction: column;
-        gap: 2rem;
-    }
+//         @include doFlex(row, center, center)
+//     }
+// }
 
-    .personal-section {
-        min-width: auto;
-    }
+// @media (max-width: 52rem) {
+//     h1 {
+//         margin-bottom: 0.75rem;
+//         font-size: 1.5rem;
+//     }
 
-    .button-container {
-        margin-top: 1.25rem;
-
-        @include doFlex(row, center, center)
-    }
-}
-
-@media (max-width: 52rem) {
-    h1 {
-        margin-bottom: 0.75rem;
-        font-size: 1.5rem;
-    }
-
-    .skill-section {
-        flex-direction: column;
-    }
-}
+//     .skill-section {
+//         flex-direction: column;
+//     }
+// }
