@@ -28,7 +28,8 @@ $list-font: "Montserrat Alternates", sans-serif;
 html,
 body {
     overflow-x: hidden;
-    overflow-y: auto;
+    overflow-y: hidden;
+    // overflow-y: auto;
 }
 
 html {
