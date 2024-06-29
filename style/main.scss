@@ -29,7 +29,6 @@ html,
 body {
     overflow-x: hidden;
     overflow-y: hidden;
-    // overflow-y: auto;
 }
 
 html {
@@ -61,16 +60,6 @@ section {
 
 .section-align {
     @include doFlex(column, flex-start, left);
-}
-
-.expand {
-    margin-top: 1.25em;
-}
-
-.expand:hover {
-    transition: all;
-    transition-duration: 150ms;
-    transform: scale(1.1, 1.1);
 }
 
 h1 {
@@ -107,15 +96,6 @@ li {
 
     list-style-type: ">";
     padding-inline-start: 0.5em;
-
-    p {
-        transition: all;
-        transition-duration: 75ms;
-    }
-
-    p:hover {
-        color: $accent-col;
-    }
 }
 
 li::marker {
@@ -160,31 +140,3 @@ button:hover {
     color: $accent-col;
     background-color: transparent;
 }
-
-// @media (max-width: 80rem) {
-//     main {
-//         flex-direction: column;
-//         gap: 2rem;
-//     }
-
-//     .personal-section {
-//         min-width: auto;
-//     }
-
-//     .button-container {
-//         margin-top: 1.25rem;
-
-//         @include doFlex(row, center, center)
-//     }
-// }
-
-// @media (max-width: 52rem) {
-//     h1 {
-//         margin-bottom: 0.75rem;
-//         font-size: 1.5rem;
-//     }
-
-//     .skill-section {
-//         flex-direction: column;
-//     }
-// }

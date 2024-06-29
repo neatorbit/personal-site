@@ -49,16 +49,6 @@ section {
   justify-content: left;
 }
 
-.expand {
-  margin-top: 1.25em;
-}
-
-.expand:hover {
-  transition: all;
-  transition-duration: 150ms;
-  transform: scale(1.1, 1.1);
-}
-
 h1 {
   margin-bottom: 0.25em;
   font-family: "Lato", sans-serif;
@@ -87,13 +77,6 @@ li {
   line-height: 1.25rem;
   list-style-type: ">";
   padding-inline-start: 0.5em;
-}
-li p {
-  transition: all;
-  transition-duration: 75ms;
-}
-li p:hover {
-  color: #ff004d;
 }
 
 li::marker {
